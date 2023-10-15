@@ -1,12 +1,19 @@
-import { StyleSheet, Text, View } from "react-native"
+import { Pressable, StyleSheet, Text, View } from "react-native"
 
 const GoalItem = (props) => {
+
+    const deleteSelectedGoal = (id) =>{
+     props.onDeleteItem(id)
+    }
+    
     
   return (
+  <Pressable onPress={()=>deleteSelectedGoal(props.data.item.id)}>
    <View  style={styles.listItems} >
         <Text  style={styles.listItem}>{props.data.index + 1}.</Text>
         <Text  style={styles.listItem}>{props.data.item.goal}</Text>
    </View>
+  </Pressable>
   )
 }
 

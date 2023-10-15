@@ -9,15 +9,21 @@ export default function App() {
 
   const handleOnGoalSubmit = (enteredGoalText)=>{
     setTotalGoals(currentGoals => [...currentGoals, {goal:enteredGoalText, id: Date.now().toString() }])
-   
   }
+
+  const handleOnGoalDelete = (id)=>{
+     setTotalGoals(currentGoals =>{
+        return currentGoals.filter((goal)=> goal.id !== id)
+    }) 
+  }
+
   return (
     <View style={styles.appContainer}>
       <GoalInput onAddGoal={handleOnGoalSubmit}/>
       <View style={styles.goalContainer}>
         <FlatList data={totalGoals} keyExtractor={(item, i)=>{return item.id}} renderItem={itemData => {
           itemData.index
-          return <GoalItem data={itemData}/>
+          return <GoalItem data={itemData} onDeleteItem={handleOnGoalDelete}/>
         }}/>
           
         
