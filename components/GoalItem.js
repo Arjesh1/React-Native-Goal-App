@@ -8,12 +8,15 @@ const GoalItem = (props) => {
     
     
   return (
-  <Pressable onPress={()=>deleteSelectedGoal(props.data.item.id)}>
+   <Pressable onPress={()=>deleteSelectedGoal(props.data.item.id)} android_ripple={{color: '#210644'}} styles={({pressed})=> pressed && styles.pressedItem} >
    <View  style={styles.listItems} >
+   
         <Text  style={styles.listItem}>{props.data.index + 1}.</Text>
         <Text  style={styles.listItem}>{props.data.item.goal}</Text>
+        
    </View>
-  </Pressable>
+   </Pressable>
+  
   )
 }
 
@@ -25,7 +28,12 @@ const styles = StyleSheet.create({
     gap: 10,
     borderRadius: 10,
     backgroundColor: 'purple',
-     marginVertical: 5,
+    marginVertical: 5,
+
+  },
+
+  pressedItem:{
+    opacity: 0.5,
 
   },
 
