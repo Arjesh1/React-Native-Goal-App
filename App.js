@@ -38,15 +38,9 @@ export default function App() {
           itemData.index
           return <GoalItem data={itemData} onDeleteItem={handleOnGoalDelete}/>
         }}/>
-          
-        
       </View>
-    
     </View>
-    
-    
     </>
-    
   );
 }
 
@@ -55,7 +49,6 @@ const styles = StyleSheet.create({
     marginTop: 50,
     paddingHorizontal: 20,
     flex: 1,
-    
   },
 
   inputContainer: {

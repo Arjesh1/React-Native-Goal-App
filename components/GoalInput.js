@@ -22,15 +22,12 @@ const GoalInput = (props) => {
             <Pressable onPress={addGoalHandler}>
               <Text style={styles.addButton}>Add Goal</Text>
             </Pressable>
-         
           </View>
           <View style={styles.button}>
              <Pressable onPress={props.onCancel}>
               <Text style={styles.closeButton}>Cancel</Text>
             </Pressable>
           </View>
-         
-         
         </View>
         
       </View>
@@ -79,8 +76,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: 6,
-   
-    
   },
    
   button:{
@@ -95,6 +90,5 @@ const styles = StyleSheet.create({
     fontSize: 20,
     width: '75%',
     borderRadius: 10,
-  
   },
 })
