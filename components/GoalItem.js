@@ -9,7 +9,7 @@ const GoalItem = (props) => {
     
   return (
    <Pressable onPress={()=>deleteSelectedGoal(props.data.item.id)} android_ripple={{color: '#210644'}} styles={({pressed})=> pressed && styles.pressedItem} >
-   <View  style={styles.listItems} >
+   <View style={styles.listItems} >
    
         <Text  style={styles.listItem}>{props.data.index + 1}.</Text>
         <Text  style={styles.listItem}>{props.data.item.goal}</Text>
